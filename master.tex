@@ -1,0 +1,121 @@
+\documentclass[
+version=last,toc=bib,toc=graduated,toc=index,toc=listof,9pt,openany]{scrbook}
+%\pdfminorversion=4
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+
+\setmainfont{Source Sans Pro}
+\setsansfont{Source Sans Pro}
+
+\usepackage{ifmtarg}
+\usepackage{ifthen}
+\usepackage{etoolbox} % \ifstrempty
+
+\usepackage{geometry}
+\geometry{%a6paper
+paperwidth=125mm, paperheight=168mm, 
+portrait,
+top=22mm,
+inner=22mm,
+outer=20mm,
+bottom=25mm,
+headsep=3mm,
+footskip=12mm
+}
+
+% math symbols
+\usepackage{amssymb}
+
+\usepackage{ragged2e} % nicer typesetting (hyphenation) for non raggedright and raggedleft
+\usepackage{lscape}
+\setlength{\parskip}{0pt}
+
+\usepackage{relsize}
+
+\clubpenalty=10000
+\widowpenalty=10000 
+\displaywidowpenalty=10000
+
+\usepackage[]{microtype}
+
+\usepackage{graphicx} % graphics
+
+% search path for images
+\graphicspath{{images-print/}{icons/}{extra-pages/}{wallpaper/}}
+\usepackage{wrapfig}  % sponsor logos wrapped with text
+
+\usepackage{tabu}
+\usepackage[table,cymk]{xcolor}
+\usepackage{colortbl}
+
+% embed PDF pages
+% pdfpages must not be loaded before colortbl!
+\usepackage{pdfpages}
+% TikZ must not be loaded before colortbl
+\usepackage{tikz}
+
+\usepackage{multirow}
+%\usepackage{booktabs}
+
+\usepackage{array}
+
+% dashed lines in tables
+\usepackage{arydshln}
+\ADLdrawingmode{1}
+
+% multiple text columns (list of thanks)
+\usepackage{multicol}
+
+\usepackage{refcount} % calculation of the page where the map is located
+
+% page background
+\usepackage[manualmark]{scrlayer-scrpage}
+\pagestyle{scrplain}
+
+\newcommand{\acro}[1]{{\textsmaller{#1}}} % macro for abbreviations with more than one capitalised letter
+
+
+% title/metadata
+\title{State of the Map 2019}
+\subtitle{Programme}
+\author{OpenStreetMap Foundation}
+\date{\today}
+
+\clearscrheadings
+
+% page numbers
+\cfoot[\begin{small}\pagemark\end{small}]{\begin{small}\pagemark\end{small}}
+\ofoot[]{}
+\ifoot[]{}
+\pagestyle{scrplain}
+
+\linespread{1.15}
+
+% include our custom macros
+\input{abstract-commands}
+%\input{sponsor-pagestyles}
+
+\begin{document}
+ 
+%\pagestyle{cropmarksstyle}
+\begin{titlepage}
+%  \thispagestyle{titlestyle}
+  \null
+\end{titlepage}
+\pagestyle{cropmarksstyle}
+
+\selectlanguage{english}
+\input{contents}
+\input{welcome}
+%\input{scholarships}
+%\input{getting-around}
+\input{table-saturday}
+\input{table-sunday}
+%\input{table-monday}
+%\input{lightning-talks}
+%\input{osmf}
+%\input{thanks}
+\input{legal}
+%\input{back_cover}
+
+\end{document}
