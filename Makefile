@@ -2,8 +2,10 @@ all: master.pdf
 
 cropped: cropped.pdf
 
+luafiles: $(shell find lua/ -type f -name "*.lua")
+
 #master.pdf: *.tex icons/*.pdf images-print/*.pdf wallpaper/*.pdf sponsors/*.pdf images-print/*.tex
-master.pdf: *.tex wallpaper/*.pdf images-print/*.pdf wallpaper/*.pdf
+master.pdf: *.tex wallpaper/*.pdf images-print/*.pdf wallpaper/*.pdf icons/*.pdf luafiles
 	lualatex master.tex -interaction=nonstopmode && lualatex -interaction=nonstopmode master.tex
 
 cropped.pdf: master.pdf

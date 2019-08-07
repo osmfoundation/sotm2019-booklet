@@ -1,9 +1,9 @@
 % command for a new time slot
-\newcommand{\talktime}{9:99}
-\newcommand{\newtimeslot}[1]{\newpage\renewcommand{\talktime}{#1}}
+\newcommand{\talkTime}{9:99}
+\newcommand{\newTimeslot}[1]{\newpage\renewcommand{\talkTime}{#1}}
 
 % new time slot but without a pagebreak
-\newcommand{\newsmalltimeslot}[1]{\renewcommand{\talktime}{#1}}
+\newcommand{\newSmallTimeslot}[1]{\renewcommand{\talkTime}{#1}}
 
 % initialise \conferenceDay 
 \newcommand{\conferenceDay}{Noday}
@@ -92,7 +92,7 @@ height=169mm, contents={%
 
 % \setpagebackground selects the page style to be used depending on the current day. Each day has
 % its own page style.
-\newcommand{\setpagebackground}{ %
+\newcommand{\setPageBackground}{ %
   \ifthenelse{\equal{\conferenceDay}{\saturday}}{%
     \pagestyle{saturday}
   }{}
@@ -110,34 +110,68 @@ height=169mm, contents={%
 
 %% length of the title boxes
 \newlength{\titleboxwidth}
-\setlength{\titleboxwidth}{\textwidth}
 \advance\titleboxwidth by -6pt
 
-% command to lay out the title boxes
-\newcommand{\setAbstract}[6]{
+\newlength{\roomWidth}
+\newlength{\timeWidth}
+\newlength{\roomTimeWidth}
+\newlength{\titleWidth}
+\newcommand{\tmpRoomTimeWidth}{}
+\newcommand{\tmpTitleWidth}{}
+
+\newcommand{\setAbstract}[6]{%
   % 1. speaker
   % 2. title
   % 3. subtitle
   % 4. abstract (Text)
   % 5. colour
   % 6. room
-  %\thispagestyle{scrheadings}
-  \setPageBackground
-  \setlength\tabcolsep{0pt}
-  % \setlength{\fboxsep}{0pt}
+  \setPageBackground%
+  \calculateRoomTimeAndTitleWidth{#1}{#6}%
   \noindent\fcolorbox{white}{#5}{%
     \parbox{\titleboxwidth}{%
-      \noindent\begin{tabu}{X[5L]r}
-        \isSpeakerEmpty{#1}{#2}{#6}
-        \isSubtitleEmpty{#3}
-      \end{tabu}%
+      \isSpeakerEmpty{#1}{#2}{#6}%
+      \isSubtitleEmpty{#3}%
     }%
   }%
   %
   \isAbstractEmpty{#4}%
   \vspace{0.5em}% space to the next talk even if there is no abstract
-  \setlength\tabcolsep{6pt} % set column padding back to default value
 }
+
+% Calculate width of title and room/time field
+% Arguments: speaker, room
+\makeatletter
+  \newcommand{\calculateRoomTimeAndTitleWidth}[2]{%
+    \@ifmtarg{#1}{% speaker is empty
+      \settowidth{\roomWidth}{#2, \talkTime}%
+    }{% speaker is not empty
+      \settowidth{\roomWidth}{#2}%
+    }%
+    \settowidth{\timeWidth}{\talkTime}%
+    \directlua{require("lua/titleWidth")}%
+    \setlength{\titleboxwidth}{\directlua{getTitleBoxWidth()}}%
+    \renewcommand{\tmpRoomTimeWidth}{\directlua{getTimeRoomWidth()}}%
+    \setlength{\roomTimeWidth}{\tmpRoomTimeWidth}%
+    \renewcommand{\tmpTitleWidth}{\directlua{getTitleWidth()}}%
+    \setlength{\titleWidth}{\tmpTitleWidth}%
+  }%
+\makeatother
+
+% Lay out the subtitle
+% has to be a separate function and has to be surrounded by \makeatletter for technical reasons
+\makeatletter
+  \newcommand{\isSubtitleEmpty}[1]{%
+    \@ifnotmtarg{#1}{%
+      \par
+      \RaggedRight
+      \vspace{0.5\baselineskip}
+      \noindent%
+      \bfseries%
+      #1%
+    }
+  }
+\makeatother
 
 % lay out the speaker if there is any
 % We assume that there is only a subtitle if the talk has a speaker.
@@ -148,40 +182,34 @@ height=169mm, contents={%
     % 2. title
     % 3. room
     \@ifmtarg{#1}{%
-      \par\noindent\large \sectfont #2% % titel
-      &
-      #3, \talkTime
-      \tabularnewline
-    }%
-    {
-      \emph{#1} % Sprecher
-      &
-      \talkTime
-      \tabularnewline
-      {%
-        \par\noindent\large \sectfont #2%
-      }% % titel
-      &
-      #3
-      \tabularnewline
-    }%
-  }
-\makeatother
-
-% Lay out the subtitle
-% has to be a separate function and has to be surrounded by \makeatletter for technical reasons
-\makeatletter
-  \newcommand{\isSubtitleEmpty}[1]{%
-    \@ifnotmtarg{#1}{%
-      \multicolumn{2}{Y{\linewidth}}{%
-        \vspace{-0.6em}%
+      \begin{minipage}[t][][t]{\titleWidth}
+        \RaggedRight
         \noindent%
-        \bfseries
-        \normalsize
-        \sectfont #1%
-      }
-      \tabularnewline%
-    }
+        {\large \sectfont #2}%
+      \end{minipage}%
+      \hfill
+      \begin{minipage}[t][][t]{\roomTimeWidth}
+        \RaggedLeft%
+        \noindent #3, \talkTime%
+      \end{minipage}%
+    }%
+    {%
+      \begin{minipage}[t][][t]{\titleWidth}
+        \RaggedRight
+        \emph{#1} % speaker
+        \par%
+        \vspace{0.3\baselineskip}
+        \noindent%
+        {\large \sectfont #2}%
+      \end{minipage}%
+      \hfill
+      \begin{minipage}[t][][t]{\roomTimeWidth}
+        \RaggedLeft
+        \talkTime%
+        \par%
+        \noindent #3% room
+      \end{minipage}%
+    }%
   }
 \makeatother
 
@@ -229,19 +257,19 @@ height=169mm, contents={%
 % abstract at HSW
 \newcommand{\abstractHSW}[4]%
 {%
-  \setabstract{#1}{#2}{#3}{#4}{HSW}{HSW}
+  \setAbstract{#1}{#2}{#3}{#4}{HSW}{HSW}
 }
 
 % abstract at KHS
 \newcommand{\abstractKHS}[4]%
 {%
-  \setabstract{#1}{#2}{#3}{#4}{KHS}{KHS}
+  \setAbstract{#1}{#2}{#3}{#4}{KHS}{KHS}
 }
 
 % abstract at Mathematikon C
 \newcommand{\abstractMathematikonC}[4]%
 {%
-  \setabstract{#1}{#2}{#3}{#4}{Mathematikon C}{Mathematikon C}
+  \setAbstract{#1}{#2}{#3}{#4}{Mathematikon C}{Mathematikon C}
 }
 
 % abstract at a different location
@@ -420,8 +448,17 @@ height=169mm, contents={%
   }%
 }
 
+% speaker affiliation
+\newcommand{\speakerAffiliation}[1]{%
+  (#1)%
+}
+
+% lightning talk (title and author)
+\newcommand{\lightningTalk}[2]{%
+  \item \emph{#2:} #1%
+}
+
 % macro for no-video icon
-% Argument: height
-\newcommand{\noVideo}[1]{%
-  \includegraphics[height=#1]{no-video.pdf}%
+\newcommand{\noVideo}{%
+  \includegraphics[height=9pt]{novideo.pdf}%
 }
