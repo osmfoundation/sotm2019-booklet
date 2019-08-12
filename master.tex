@@ -1,11 +1,12 @@
-\documentclass[
-version=last,toc=bib,toc=graduated,toc=index,toc=listof,fontsize=9pt,openany]{scrbook}
+\documentclass[version=last,toc=bib,toc=graduated,toc=index,toc=listof,fontsize=9pt,openany,twoside]{scrbook}
+%\documentclass[twoside]{article}
 %\pdfminorversion=4
 \usepackage{polyglossia}
 \setdefaultlanguage{english}
 
-\setmainfont{Source Sans Pro}
-\setsansfont{Source Sans Pro}
+\setmainfont{Barlow}
+\setsansfont{Barlow}
+\newfontfamily\numeral{d-din}
 
 \usepackage{ifmtarg}
 \usepackage{ifthen}
@@ -13,7 +14,7 @@ version=last,toc=bib,toc=graduated,toc=index,toc=listof,fontsize=9pt,openany]{sc
 
 \usepackage{geometry}
 \geometry{%a6paper
-paperwidth=125mm, paperheight=168mm, 
+paperwidth=125mm, paperheight=168mm,
 portrait,
 top=22mm,
 inner=22mm,
@@ -33,7 +34,7 @@ footskip=12mm
 \usepackage{relsize}
 
 \clubpenalty=10000
-\widowpenalty=10000 
+\widowpenalty=10000
 \displaywidowpenalty=10000
 
 \usepackage[]{microtype}
@@ -57,7 +58,8 @@ footskip=12mm
 \usepackage{multirow}
 %\usepackage{booktabs}
 
-\usepackage{array}
+%\usepackage{array}
+\usepackage{array,longtable,color}
 
 % dashed lines in tables
 \usepackage{arydshln}
@@ -95,8 +97,25 @@ footskip=12mm
 \input{abstract-commands}
 %\input{sponsor-pagestyles}
 
+% https://tex.stackexchange.com/a/11709/111822
+\newcommand*\cleartoleftpage{%
+  \clearpage
+  \ifodd\value{page}\hbox{}\newpage\fi
+}
+% https://tex.stackexchange.com/a/93810/111822
+\def\widesplit#1{%
+\cleartoleftpage
+\def\row##1##2{##1}%
+#1%
+\clearpage
+\def\row##1##2{##2}%
+#1%
+\clearpage
+}
+
+
 \begin{document}
- 
+
 %\pagestyle{cropmarksstyle}
 \begin{titlepage}
 %  \thispagestyle{titlestyle}
@@ -109,11 +128,12 @@ footskip=12mm
 \input{welcome}
 %\input{scholarships}
 %\input{getting-around}
+
 \input{table-saturday}
 \input{table-sunday}
 \input{table-monday}
-\input{saturday}
-\input{sunday}
+%%%\input{saturday}
+%%%\input{sunday}
 %\input{lightning-talks}
 %\input{osmf}
 %\input{thanks}

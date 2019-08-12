@@ -5,7 +5,7 @@
 % new time slot but without a pagebreak
 \newcommand{\newSmallTimeslot}[1]{\renewcommand{\talkTime}{#1}}
 
-% initialise \conferenceDay 
+% initialise \conferenceDay
 \newcommand{\conferenceDay}{Noday}
 
 
@@ -230,7 +230,8 @@ height=169mm, contents={%
 % define colours
 \definecolor{GHS}{cmyk}{0.16 0 .05 0}
 \definecolor{HSO}{cmyk}{0.02 0 0.12 0.11}
-\definecolor{academic}{cmyk}{0 0.02 0.23 0}
+%\definecolor{academic}{cmyk}{0 0.02 0.23 0}
+\definecolor{academic}{cmyk}{0.35 0 0.33 0.16}
 \definecolor{HSW}{cmyk}{0.35 0 0.33 0.16}
 \definecolor{KHS}{cmyk}{0 .24 0.29 .04}
 \definecolor{Mathematikon C}{cmyk}{.16 0 0.35 0}
@@ -242,7 +243,7 @@ height=169mm, contents={%
   \setAbstract{#1}{#2}{#3}{#4}{GHS}{GHS}
 }
 
-% abstract at HSO 
+% abstract at HSO
 \newcommand{\abstractHSO}[4]%
 {%
   \setAbstract{#1}{#2}{#3}{#4}{HSO}{HSO}
@@ -351,7 +352,7 @@ height=169mm, contents={%
             \includegraphics[width=#2]{#1}
           \end{wrapfigure}
         }
-  
+
         \noindent #4
       }%
     }
@@ -429,16 +430,17 @@ height=169mm, contents={%
 % macro for table rules
 \newcommand{\programCRule}[1]{%
   \arrayrulecolor{tableRuleGray}%
-  \cdashline{#1}[0.2mm/2mm]%
+  \cdashline{#1}[0.2mm/0.4mm]%
 }
 \newcommand{\programHRule}[1]{%
   \arrayrulecolor{tableRuleGray}%
-  \cdashline{2-#1}[0.2mm/2mm]%
+  \cdashline{2-#1}[0.2mm/0.4mm]%
 }
 
 % macro for empty session slots
 \newcommand{\bookableSpace}{
-  & \emph{\textcolor{textGray}{bookable space}}%
+  &
+  \emph{\textcolor{textGray}{bookable space}}%
 }
 
 % diamond symbol for shortened titles
@@ -461,4 +463,9 @@ height=169mm, contents={%
 % macro for no-video icon
 \newcommand{\noVideo}{%
   \includegraphics[height=9pt]{novideo.pdf}%
+}
+
+% skip line to make right/left table columns align
+\newcommand{\skipline}{%
+  \vspace{0.365cm}
 }
