@@ -1,0 +1,17 @@
+
+% time: ((( date|datetimeformat('%A %H:%M') )))
+% URL: https://pretalx.com/sotm2019/talk/((( slug )))/
+
+((% if last_timeslot != date %))\newSmallTimeslot{((( date|datetimeformat )))}((% endif %))
+((( command ))){%
+  ((( speakers|e )))%
+}{%
+  ((( title|e )))%
+}{%
+}{%
+((# two spaces are inserted by preprocessing at the beginning of each line -#))
+((( abstract|e )))%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
