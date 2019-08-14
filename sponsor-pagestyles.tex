@@ -1,0 +1,140 @@
+% Ministerium für Verkehr advertisement (left)
+%TODO get rid of their cropmarks, add ours
+\DeclareNewLayer[background,%
+  width=125mm,%
+  height=168mm,%
+  hoffset=-0.4mm,%
+  contents={%
+    %TODO correct size
+    \includegraphics{sponsors/ministerium-fuer-verkehr-left.pdf}%
+  }%
+]{mvleftadvertisement}
+\newpairofpagestyles[]{sponsor-mvleft}{}
+\AddLayersAtBeginOfPageStyle{sponsor-mvleft}{mvleftadvertisement}
+
+% Ministerium für Verkehr advertisement (right)
+%TODO get rid of their cropmarks, add ours
+\DeclareNewLayer[background,%
+  width=125mm,%
+  height=168mm,%
+  hoffset=-0.4mm,%
+  contents={%
+    %TODO correct size
+    \includegraphics{sponsors/ministerium-fuer-verkehr-right.pdf}%
+  }%
+]{mvrightadvertisement}
+\newpairofpagestyles[]{sponsor-mvright}{}
+\AddLayersAtBeginOfPageStyle{sponsor-mvright}{mvrightadvertisement}
+
+% Geotab advertisement
+\DeclareNewLayer[background,%
+  width=125mm,%
+  height=168mm,%
+  hoffset=-0.4mm,%
+  contents={%
+    \includegraphics{sponsors/geotab.pdf}%
+  }%
+]{geotabadvertisement}
+\newpairofpagestyles[]{sponsor-geotab}{}
+\AddLayersAtBeginOfPageStyle{sponsor-geotab}{geotabadvertisement}
+\AddLayersAtBeginOfPageStyle{sponsor-geotab}{cropmarksplain}
+
+% Grab advertisement
+\DeclareNewLayer[background,%
+  width=125mm,%
+  height=168mm,%
+  hoffset=-0.4mm,%
+  contents={%
+    \includegraphics{sponsors/grab.pdf}%
+  }%
+]{grabadvertisement}
+\newpairofpagestyles[]{sponsor-grab}{}
+\AddLayersAtBeginOfPageStyle{sponsor-grab}{grabadvertisement}
+\AddLayersAtBeginOfPageStyle{sponsor-grab}{cropmarksplain}
+
+% Mapbox advertisement
+\DeclareNewLayer[background,%
+  width=125mm,%
+  height=168mm,%
+  hoffset=-0.4mm,%
+  contents={%
+    \includegraphics{sponsors/mapbox.pdf}%
+  }%
+]{mapboxadvertisement}
+\newpairofpagestyles[]{sponsor-mapbox}{}
+\AddLayersAtBeginOfPageStyle{sponsor-mapbox}{mapboxadvertisement}
+\AddLayersAtBeginOfPageStyle{sponsor-mapbox}{cropmarksplain}
+
+% Anyways advertisement
+\DeclareNewLayer[background,%
+  width=125mm,%
+  height=168mm,%
+  hoffset=-0.4mm,%
+  contents={%
+    \includegraphics[width=125mm]{sponsors/anyways.pdf}%
+  }%
+]{anywaysadvertisement}
+\newpairofpagestyles[]{sponsor-anyways}{}
+\AddLayersAtBeginOfPageStyle{sponsor-anyways}{anywaysadvertisement}
+\AddLayersAtBeginOfPageStyle{sponsor-anyways}{cropmarksplain}
+
+% Telenav advertisement
+\DeclareNewLayer[background,%
+  width=125mm,%
+  height=168mm,%
+  hoffset=-0.4mm,%
+  contents={%
+    \includegraphics{sponsors/telenav.pdf}%
+  }%
+]{telenavadvertisement}
+\newpairofpagestyles[]{sponsor-telenav}{}
+\AddLayersAtBeginOfPageStyle{sponsor-telenav}{cropmarksplain}
+\AddLayersAtBeginOfPageStyle{sponsor-telenav}{telenavadvertisement}
+
+% OpenCage and Mapillary advertisement
+\DeclareNewLayer[background,%
+  width=115mm,%
+  height=79mm,%
+  hoffset=-0.4mm,
+  voffset=5mm,
+  contents={%
+    \includegraphics{sponsors/opencage.pdf}%
+  }%
+]{opencage}
+\DeclareNewLayer[background,%
+  width=115mm,%
+  height=79mm,%
+  hoffset=-0.4mm,%
+  voffset=84mm,%
+  contents={%
+    \includegraphics{sponsors/mapillary.png}%
+  }%
+]{mapillary}
+\newpairofpagestyles{sponsor-opencage-mapillary}{}
+\AddLayersAtBeginOfPageStyle{sponsor-opencage-mapillary}{opencage}
+\AddLayersAtBeginOfPageStyle{sponsor-opencage-mapillary}{mapillary}
+\AddLayersAtBeginOfPageStyle{sponsor-opencage-mapillary}{cropmarksevery}
+
+% SNCF and OSADL advertisement
+%\DeclareNewLayer[background,%
+%  width=115mm,%
+%  height=79mm,%
+%  hoffset=-0.4mm,
+%  voffset=5mm,
+%  contents={%
+%    \includegraphics{sponsors/sncf.pdf}%
+%  }%
+%]{sncf}
+\DeclareNewLayer[background,%
+  width=115mm,%
+  height=79mm,%
+  hoffset=-0.4mm,%
+  voffset=84mm,%
+  contents={%
+    \includegraphics{sponsors/osadl.pdf}%
+  }%
+]{osadl}
+\newpairofpagestyles{sponsor-sncf-osadl}{}
+%\AddLayersAtBeginOfPageStyle{sponsor-sncf-osadl}{sncf}
+\AddLayersAtBeginOfPageStyle{sponsor-sncf-osadl}{osadl}
+\AddLayersAtBeginOfPageStyle{sponsor-sncf-osadl}{cropmarksevery}

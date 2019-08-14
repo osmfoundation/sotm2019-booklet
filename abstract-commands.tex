@@ -8,6 +8,11 @@
 % initialise \conferenceDay 
 \newcommand{\conferenceDay}{Noday}
 
+% define page style for cutting marks without anything else
+\DeclareNewLayer[background, oddorevenpage, width=125mm,%
+height=169mm, contents={%
+  \includegraphics{wallpaper/crop-marks.pdf}%
+}]{cropmarksplain}
 
 % define default page style (cutting marks with page number)
 \DeclareNewLayer[background, oddorevenpage, width=125mm,%
