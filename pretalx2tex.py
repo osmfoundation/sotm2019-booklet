@@ -50,7 +50,7 @@ commands = {
 }
 default_cmd = {"name": "???", "command": "\\abstractOther"}
 DATE_FORMAT = "%Y-%m-%dT%H:%M:%S%z"
-RE_SINGLE_NEWLINE = re.compile("[^\\n]\\n", re.MULTILINE)
+RE_SINGLE_NEWLINE = re.compile("([^\\n])\\n", re.MULTILINE)
 RE_VALID_WORD = re.compile("^[-A-ZÄÖÜäöüa-z]{2,}$")
 
 def datetimeformat(value, format="%H:%M"):
@@ -84,7 +84,7 @@ def get_wordlist(text):
 def break_long_lines(source):
     # split source by newlines to preserve them
     splitted = source.replace("\r\n", "\n")
-    splitted = RE_SINGLE_NEWLINE.sub("\\n\\n", splitted).split("\n")
+    splitted = RE_SINGLE_NEWLINE.sub("\\1\\n\\n", splitted).split("\n")
     result = []
     for paragraph in splitted:
         if paragraph != "":
