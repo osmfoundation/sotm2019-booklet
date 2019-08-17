@@ -1,0 +1,15 @@
+% public transport map
+%TODO get rid of their cropmarks, add ours
+\DeclareNewLayer[background,%
+  width=105mm,%
+  height=148mm,%
+  hoffset=10mm,%
+  voffset=10mm,%
+  contents={%
+    %TODO correct size
+    \includegraphics[]{images-print/public_transport.pdf}%
+  }%
+]{publictransport}
+\newpairofpagestyles[]{page-public-transport}{}
+\AddLayersAtBeginOfPageStyle{page-public-transport}{cropmarksplain}
+\AddLayersAtBeginOfPageStyle{page-public-transport}{publictransport}
