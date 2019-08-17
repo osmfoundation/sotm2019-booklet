@@ -145,22 +145,22 @@
 % Accenture and TomTom logo
 \DeclareNewLayer[background,%
   width=84mm,%
-  height=22.4mm,%
-  hoffset=20mm,
-  voffset=35mm,
-  contents={%
-    \includegraphics[width=84mm]{sponsors/accenture.png}
-  }%
-]{accentureimage}
-\DeclareNewLayer[background,%
-  width=84mm,%
   height=25mm,%
   hoffset=18mm,
-  voffset=104mm,
+  voffset=35mm,
   contents={%
     \includegraphics[width=97mm]{sponsors/tomtom.pdf}
   }%
 ]{tomtomimage}
+\DeclareNewLayer[background,%
+  width=84mm,%
+  height=22.4mm,%
+  hoffset=20mm,
+  voffset=104mm,
+  contents={%
+    \includegraphics[width=84mm]{sponsors/accenture.png}
+  }%
+]{accentureimage}
 \newpairofpagestyles[cropmarksstyle]{sponsor-accenture-tomtom}{}
 \AddLayersAtBeginOfPageStyle{sponsor-accenture-tomtom}{accentureimage}
 \AddLayersAtBeginOfPageStyle{sponsor-accenture-tomtom}{tomtomimage}
