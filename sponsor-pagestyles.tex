@@ -142,18 +142,7 @@
 \AddLayersAtBeginOfPageStyle{sponsor-ibm-osadl}{osadl}
 \AddLayersAtBeginOfPageStyle{sponsor-ibm-osadl}{cropmarksevery}
 
-% Accenture logo
-\DeclareNewLayer[background,%
-  width=105mm,%
-  height=74mm,%
-  hoffset=10mm,
-  voffset=10mm,
-  contents={%
-    \begin{tikzpicture}[x=1mm, y=1mm]
-      \fill [white] (0,0) rectangle (105,74);
-    \end{tikzpicture}
-  }%
-]{accenturebackground}
+% Accenture and TomTom logo
 \DeclareNewLayer[background,%
   width=84mm,%
   height=22.4mm,%
@@ -163,7 +152,44 @@
     \includegraphics[width=84mm]{sponsors/accenture.png}
   }%
 ]{accentureimage}
-\newpairofpagestyles{sponsor-accenture}{}
-\AddLayersAtBeginOfPageStyle{sponsor-accenture}{accentureimage}
-\AddLayersAtBeginOfPageStyle{sponsor-accenture}{accenturebackground}
-\AddLayersAtBeginOfPageStyle{sponsor-accenture}{cropmarksevery}
+\DeclareNewLayer[background,%
+  width=84mm,%
+  height=25mm,%
+  hoffset=18mm,
+  voffset=104mm,
+  contents={%
+    \includegraphics[width=97mm]{sponsors/tomtom.pdf}
+  }%
+]{tomtomimage}
+\newpairofpagestyles[cropmarksstyle]{sponsor-accenture-tomtom}{}
+\AddLayersAtBeginOfPageStyle{sponsor-accenture-tomtom}{accentureimage}
+\AddLayersAtBeginOfPageStyle{sponsor-accenture-tomtom}{tomtomimage}
+\AddLayersAtBeginOfPageStyle{sponsor-accenture-tomtom}{cropmarksevery}
+
+% Facebook logo
+\DeclareNewLayer[background,%
+  width=83mm,%
+  height=16mm,%
+  hoffset=20mm,
+  voffset=76mm,
+  contents={%
+    \includegraphics[width=83mm]{sponsors/facebook.pdf}
+  }%
+]{facebookimage}
+\newpairofpagestyles[cropmarksstyle]{sponsor-facebook}{}
+\AddLayersAtBeginOfPageStyle{sponsor-facebook}{facebookimage}
+\AddLayersAtBeginOfPageStyle{sponsor-facebook}{cropmarksevery}
+
+% Bing logo
+\DeclareNewLayer[background,%
+  width=83mm,%
+  height=16mm,%
+  hoffset=20mm,
+  voffset=67mm,
+  contents={%
+    \includegraphics[width=83mm]{sponsors/bing.pdf}
+  }%
+]{bingimage}
+\newpairofpagestyles[cropmarksstyle]{sponsor-bing}{}
+\AddLayersAtEndOfPageStyle{sponsor-bing}{bingimage}
+\AddLayersAtBeginOfPageStyle{sponsor-bing}{cropmarksevery}
