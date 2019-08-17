@@ -1,8 +1,8 @@
 % Ministerium für Verkehr advertisement (left)
 %TODO get rid of their cropmarks, add ours
 \DeclareNewLayer[background,%
-  width=125mm,%
-  height=168mm,%
+  width=115mm,%
+  height=158mm,%
   hoffset=5mm,%
   voffset=5mm,%
   contents={%
@@ -17,8 +17,8 @@
 % Ministerium für Verkehr advertisement (right)
 %TODO get rid of their cropmarks, add ours
 \DeclareNewLayer[background,%
-  width=125mm,%
-  height=168mm,%
+  width=115mm,%
+  height=158mm,%
   hoffset=5mm,%
   voffset=5mm,%
   contents={%
@@ -60,14 +60,13 @@
 \DeclareNewLayer[background,%
   width=125mm,%
   height=168mm,%
-  hoffset=-0.4mm,%
   contents={%
     \includegraphics{sponsors/mapbox.pdf}%
   }%
 ]{mapboxadvertisement}
 \newpairofpagestyles[]{sponsor-mapbox}{}
-\AddLayersAtBeginOfPageStyle{sponsor-mapbox}{mapboxadvertisement}
 \AddLayersAtBeginOfPageStyle{sponsor-mapbox}{cropmarksplain}
+\AddLayersAtBeginOfPageStyle{sponsor-mapbox}{mapboxadvertisement}
 
 % Anyways advertisement
 \DeclareNewLayer[background,%
@@ -99,36 +98,36 @@
 \DeclareNewLayer[background,%
   width=115mm,%
   height=79mm,%
-  hoffset=-0.4mm,
+  hoffset=5mm,
   voffset=5mm,
   contents={%
-    \includegraphics{sponsors/opencage.pdf}%
+    \includegraphics[width=115mm, height=79mm]{sponsors/opencage.png}%
   }%
 ]{opencage}
 \DeclareNewLayer[background,%
   width=115mm,%
   height=79mm,%
-  hoffset=-0.4mm,%
+  hoffset=5mm,%
   voffset=84mm,%
   contents={%
-    \includegraphics{sponsors/mapillary.png}%
+    \includegraphics[width=115mm]{sponsors/mapillary.png}%
   }%
 ]{mapillary}
 \newpairofpagestyles{sponsor-opencage-mapillary}{}
+\AddLayersAtBeginOfPageStyle{sponsor-opencage-mapillary}{cropmarksevery}
 \AddLayersAtBeginOfPageStyle{sponsor-opencage-mapillary}{opencage}
 \AddLayersAtBeginOfPageStyle{sponsor-opencage-mapillary}{mapillary}
-\AddLayersAtBeginOfPageStyle{sponsor-opencage-mapillary}{cropmarksevery}
 
-% SNCF and OSADL advertisement
-%\DeclareNewLayer[background,%
-%  width=115mm,%
-%  height=79mm,%
-%  hoffset=-0.4mm,
-%  voffset=5mm,
-%  contents={%
-%    \includegraphics{sponsors/sncf.pdf}%
-%  }%
-%]{sncf}
+% IBM and OSADL advertisement
+\DeclareNewLayer[background,%
+  width=108mm,%
+  height=77mm,%
+  hoffset=8.5mm,
+  voffset=7.0mm,
+  contents={%
+    \includegraphics{sponsors/ibm.pdf}%
+  }%
+]{ibm}
 \DeclareNewLayer[background,%
   width=115mm,%
   height=79mm,%
@@ -138,7 +137,33 @@
     \includegraphics{sponsors/osadl.pdf}%
   }%
 ]{osadl}
-\newpairofpagestyles{sponsor-sncf-osadl}{}
-%\AddLayersAtBeginOfPageStyle{sponsor-sncf-osadl}{sncf}
-\AddLayersAtBeginOfPageStyle{sponsor-sncf-osadl}{osadl}
-\AddLayersAtBeginOfPageStyle{sponsor-sncf-osadl}{cropmarksevery}
+\newpairofpagestyles{sponsor-ibm-osadl}{}
+\AddLayersAtBeginOfPageStyle{sponsor-ibm-osadl}{ibm}
+\AddLayersAtBeginOfPageStyle{sponsor-ibm-osadl}{osadl}
+\AddLayersAtBeginOfPageStyle{sponsor-ibm-osadl}{cropmarksevery}
+
+% Accenture logo
+\DeclareNewLayer[background,%
+  width=105mm,%
+  height=74mm,%
+  hoffset=10mm,
+  voffset=10mm,
+  contents={%
+    \begin{tikzpicture}[x=1mm, y=1mm]
+      \fill [white] (0,0) rectangle (105,74);
+    \end{tikzpicture}
+  }%
+]{accenturebackground}
+\DeclareNewLayer[background,%
+  width=84mm,%
+  height=22.4mm,%
+  hoffset=20mm,
+  voffset=35mm,
+  contents={%
+    \includegraphics[width=84mm]{sponsors/accenture.png}
+  }%
+]{accentureimage}
+\newpairofpagestyles{sponsor-accenture}{}
+\AddLayersAtBeginOfPageStyle{sponsor-accenture}{accentureimage}
+\AddLayersAtBeginOfPageStyle{sponsor-accenture}{accenturebackground}
+\AddLayersAtBeginOfPageStyle{sponsor-accenture}{cropmarksevery}
