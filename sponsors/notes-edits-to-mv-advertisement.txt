@@ -1,0 +1,9 @@
+gs -dNOPAUSE -dBATCH -o mv-cutoff-white-margins.pdf -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -g7087x4762 -c "<< /Install {-15 -15 translate } bind >> setpagedevice" -f ~/Dokumente/OSM/sotm-wg/2019/booklet/input/sponsors/ministerium-fuer-verkehr-version2-double-page.pdf
+
+# calculations would say that we have to use an x offset of 125 mm (i.e. 360 offset units) but in reality, 120 (345) are right
+# The blue "Hello Pioneers" paragraph on the left page is very close to the border. That's why we shift the whole advertisement 3 mm to the right (i.e. 6 offset units).
+gs -dNOPAUSE -dBATCH -o mv-right.pdf -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -g3264x4484 -c "<< /Install {-339 -15 translate } bind >> setpagedevice" -g3263x4484 -f mv-cutoff-white-margins.pdf
+gs -dNOPAUSE -dBATCH -o mv-left.pdf -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -g3264x4484 -c "<< /Install {-39 -15 translate } bind >> setpagedevice" -g3263x4484 -f mv-cutoff-white-margins.pdf
+
+cp mv-left.pdf ~/Dokumente/OSM/sotm-wg/2019/booklet/sponsors/ministerium-fuer-verkehr-left.pdf
+cp mv-right.pdf ~/Dokumente/OSM/sotm-wg/2019/booklet/sponsors/ministerium-fuer-verkehr-right.pdf

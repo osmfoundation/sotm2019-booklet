@@ -3,13 +3,15 @@
 \DeclareNewLayer[background,%
   width=125mm,%
   height=168mm,%
-  hoffset=-0.4mm,%
+  hoffset=5mm,%
+  voffset=5mm,%
   contents={%
     %TODO correct size
-    \includegraphics{sponsors/ministerium-fuer-verkehr-left.pdf}%
+    \includegraphics[pagebox=mediabox]{sponsors/ministerium-fuer-verkehr-left.pdf}%
   }%
 ]{mvleftadvertisement}
 \newpairofpagestyles[]{sponsor-mvleft}{}
+\AddLayersAtBeginOfPageStyle{sponsor-mvleft}{cropmarksplain}
 \AddLayersAtBeginOfPageStyle{sponsor-mvleft}{mvleftadvertisement}
 
 % Ministerium für Verkehr advertisement (right)
@@ -17,13 +19,15 @@
 \DeclareNewLayer[background,%
   width=125mm,%
   height=168mm,%
-  hoffset=-0.4mm,%
+  hoffset=5mm,%
+  voffset=5mm,%
   contents={%
     %TODO correct size
-    \includegraphics{sponsors/ministerium-fuer-verkehr-right.pdf}%
+    \includegraphics[pagebox=mediabox]{sponsors/ministerium-fuer-verkehr-right.pdf}%
   }%
 ]{mvrightadvertisement}
 \newpairofpagestyles[]{sponsor-mvright}{}
+\AddLayersAtBeginOfPageStyle{sponsor-mvright}{cropmarksplain}
 \AddLayersAtBeginOfPageStyle{sponsor-mvright}{mvrightadvertisement}
 
 % Geotab advertisement
