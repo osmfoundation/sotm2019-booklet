@@ -1,49 +1,63 @@
 \newpage
-\section*{Legal Notice}
-\label{legal}
+\pagestyle{page-citymap-left}
+\label{city-map}
+\null
+\newpage
+\pagestyle{page-citymap-right}
+\null
+\newpage
+\pagestyle{page-campus}
+\label{campus-map}
+\null
+
+\newpage
 \pagestyle{cropmarksstyle}
+\noindent\includegraphics{sponsors/sncf.pdf}
 
-\RaggedRight
-{\small
-  State of the Map 2019 is jointly organised by the OpenStreetMap Foundation,
-  Ruprecht-Karls-Universität Heidelberg and FOSSGIS e.V..
-
-\vspace{0.5em}
-\newlength\logoHeight
-\setlength{\logoHeight}{4.0\baselineskip}
-\includegraphics[height=\logoHeight]{osm-logo.pdf}
-\hfill
-\includegraphics[height=\logoHeight]{FOSSGIS.pdf}
-%\hfill
-%\includegraphics[height=\logoHeight]{polimi.png}
-
-\vspace{0.5em}
-\noindent Responsible for the content:\\
-OpenStreetMap Foundation\\
-St John’s Innovation Centre\\
-Cowley Road\\
-Cambridge\\
-CB4 0WS\\
-United Kingdom
-
-\vspace{0.5em}
-\noindent This booklet has been prepared using Lua\LaTeX\ and 
-other free and open source software.\\
-Source code: https://github.com/osmfoundation/sotm2019-booklet\\
-Content: OSMF State of the Map Working Group\\
-Typesetting and layout: Michael Reichert\\
-Map style and icons in the schedules: OpenStreetMap Carto developers\\
-Map rendering: Geofabrik GmbH\\
-Map data: \includegraphics[height=7pt]{copyright}~Open\-Street\-Map contributors, https://osm.org/copyright\\
-
-\vspace{1em}
-\noindent \begin{minipage}[htbp]{0.2\textwidth}
-\noindent\includegraphics[width=\linewidth]{cc-by-sa-pdf}
-\end{minipage}
-\hfill
-\begin{minipage}[hbtp]{0.74\textwidth}\RaggedRight
-  {\small
-    This booklet may be re-used under the Creative Commons Attribution Share-Alike 3.0 license or any later version of that license.
-    This does not apply to advertisements and logos.
-  }
-\end{minipage}
+\vspace{1\baselineskip}
+\enlargethispage{1\baselineskip}
+\setlength{\fboxwidth}{\textwidth}
+{\advance\fboxwidth by -10.0pt}
+\noindent\fcolorbox{gray}{white}{%
+  \begin{minipage}{\fboxwidth}%
+    \textbf{Legal Notice and Credits}
+    \label{legal}
+    
+    \RaggedRight
+    {\small
+      State of the Map 2019 is jointly organised by the OpenStreetMap Foundation,
+      Ruprecht-Karls-Universität Heidelberg and FOSSGIS e.V..
+    
+      \vspace{0.5em}
+      \newlength\logoHeight
+      \setlength{\logoHeight}{3.5\baselineskip}
+      \includegraphics[height=\logoHeight]{osm-logo.pdf}
+      \hfill
+      \includegraphics[height=\logoHeight]{uni_hd_logo.pdf}
+      \hfill
+      \includegraphics[height=0.8\logoHeight]{FOSSGIS.pdf}
+      
+      \vspace{0.5em}
+      \noindent Responsible for the content:
+      OpenStreetMap Foundation,
+      St John’s Innovation Centre,
+      Cowley Road,
+      Cambridge,
+      CB4 0WS,
+      United Kingdom
+      
+      \vspace{0.5em}
+      \noindent This booklet has been prepared using Lua\LaTeX\ and 
+      other free and open source software.\\
+      Source code: https://github.com/osmfoundation/sotm2019-booklet\\
+      Copy editing: Christine Karch, Rory McCann\\
+      Typesetting and layout: Michael Reichert\\
+      Map style and icons in the schedules: OpenStreetMap Carto developers\\
+      Map data: \includegraphics[height=7pt]{copyright}~Open\-Street\-Map contributors, https://osm.org/copyright\\
+      
+      \vspace{0.5em}
+      \noindent This booklet may be re-used under the Creative Commons Attribution Share-Alike 3.0 license or any later version of that license.
+      This does not apply to advertisements and logos.
+    }
+  \end{minipage}%
+}
