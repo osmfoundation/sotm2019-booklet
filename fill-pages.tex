@@ -1,5 +1,4 @@
 % public transport map
-%TODO get rid of their cropmarks, add ours
 \DeclareNewLayer[background,%
   width=105mm,%
   height=148mm,%
@@ -13,3 +12,46 @@
 \newpairofpagestyles[]{page-public-transport}{}
 \AddLayersAtBeginOfPageStyle{page-public-transport}{cropmarksplain}
 \AddLayersAtBeginOfPageStyle{page-public-transport}{publictransport}
+
+% city map
+\DeclareNewLayer[background,%
+  width=115mm,%
+  height=158mm,%
+  hoffset=5mm,%
+  voffset=5mm,%
+  contents={%
+    %TODO correct size
+    \includegraphics[]{images-print/heidelberg-map-left.png}%
+  }%
+]{citymapleft}
+\newpairofpagestyles[]{page-citymap-left}{}
+\AddLayersAtBeginOfPageStyle{page-citymap-left}{cropmarksplain}
+\AddLayersAtBeginOfPageStyle{page-citymap-left}{citymapleft}
+\DeclareNewLayer[background,%
+  width=115mm,%
+  height=158mm,%
+  hoffset=5mm,%
+  voffset=5mm,%
+  contents={%
+    %TODO correct size
+    \includegraphics[]{images-print/heidelberg-map-right.png}%
+  }%
+]{citymapright}
+\newpairofpagestyles[]{page-citymap-right}{}
+\AddLayersAtBeginOfPageStyle{page-citymap-right}{cropmarksplain}
+\AddLayersAtBeginOfPageStyle{page-citymap-right}{citymapright}
+
+% campus map
+\DeclareNewLayer[background,%
+  width=115mm,%
+  height=158mm,%
+  hoffset=5mm,%
+  voffset=5mm,%
+  contents={%
+    %TODO correct size
+    \includegraphics[]{images-print/campus.pdf}%
+  }%
+]{campus}
+\newpairofpagestyles[]{page-campus}{}
+\AddLayersAtBeginOfPageStyle{page-campus}{cropmarksplain}
+\AddLayersAtBeginOfPageStyle{page-campus}{campus}
