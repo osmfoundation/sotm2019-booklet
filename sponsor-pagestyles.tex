@@ -94,16 +94,16 @@
 \AddLayersAtBeginOfPageStyle{sponsor-telenav}{cropmarksplain}
 \AddLayersAtBeginOfPageStyle{sponsor-telenav}{telenavadvertisement}
 
-% OpenCage and Mapillary advertisement
+% SNCF and Mapillary advertisement
 \DeclareNewLayer[background,%
   width=115mm,%
-  height=79mm,%
+  height=77.5mm,%
   hoffset=5mm,
-  voffset=5mm,
+  voffset=6.5mm,
   contents={%
-    \includegraphics[width=115mm, height=79mm]{sponsors/opencage.png}%
+    \includegraphics[width=115mm, height=77.5mm]{sponsors/sncf.png}%
   }%
-]{opencage}
+]{sncf}
 \DeclareNewLayer[background,%
   width=115mm,%
   height=79mm,%
@@ -113,10 +113,10 @@
     \includegraphics[width=115mm]{sponsors/mapillary.png}%
   }%
 ]{mapillary}
-\newpairofpagestyles{sponsor-opencage-mapillary}{}
-\AddLayersAtBeginOfPageStyle{sponsor-opencage-mapillary}{cropmarksevery}
-\AddLayersAtBeginOfPageStyle{sponsor-opencage-mapillary}{opencage}
-\AddLayersAtBeginOfPageStyle{sponsor-opencage-mapillary}{mapillary}
+\newpairofpagestyles{sponsor-sncf-mapillary}{}
+\AddLayersAtBeginOfPageStyle{sponsor-sncf-mapillary}{cropmarksevery}
+\AddLayersAtBeginOfPageStyle{sponsor-sncf-mapillary}{sncf}
+\AddLayersAtBeginOfPageStyle{sponsor-sncf-mapillary}{mapillary}
 
 % IBM and OSADL advertisement
 \DeclareNewLayer[background,%
@@ -153,27 +153,27 @@
   }%
 ]{tomtomimage}
 \DeclareNewLayer[background,%
-  width=84mm,%
-  height=22.4mm,%
-  hoffset=20mm,
-  voffset=104mm,
+  width=115mm,%
+  height=79mm,%
+  hoffset=5mm,
+  voffset=64mm,
   contents={%
-    \includegraphics[width=84mm]{sponsors/accenture.png}
+    \includegraphics[width=110mm]{sponsors/opencage.png}%
   }%
-]{accentureimage}
-\newpairofpagestyles[cropmarksstyle]{sponsor-accenture-tomtom}{}
-\AddLayersAtBeginOfPageStyle{sponsor-accenture-tomtom}{accentureimage}
-\AddLayersAtBeginOfPageStyle{sponsor-accenture-tomtom}{tomtomimage}
-\AddLayersAtBeginOfPageStyle{sponsor-accenture-tomtom}{cropmarksevery}
+]{opencageimage}
+\newpairofpagestyles[cropmarksstyle]{sponsor-opencage-tomtom}{}
+\AddLayersAtBeginOfPageStyle{sponsor-opencage-tomtom}{tomtomimage}
+\AddLayersAtBeginOfPageStyle{sponsor-opencage-tomtom}{opencageimage}
+\AddLayersAtBeginOfPageStyle{sponsor-opencage-tomtom}{cropmarksevery}
 
 % Facebook logo
 \DeclareNewLayer[background,%
   width=83mm,%
   height=16mm,%
-  hoffset=20mm,
+  hoffset=28mm,
   voffset=76mm,
   contents={%
-    \includegraphics[width=83mm]{sponsors/facebook.pdf}
+    \includegraphics[width=75mm]{sponsors/facebook.pdf}
   }%
 ]{facebookimage}
 \newpairofpagestyles[cropmarksstyle]{sponsor-facebook}{}
