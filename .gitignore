@@ -2,3 +2,7 @@ sponsors.csv
 test.csv
 reminder.csv
 *.eps
+*.aux
+*.log
+master.pdf
+cropped.pdf
