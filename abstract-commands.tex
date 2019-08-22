@@ -328,16 +328,22 @@ height=169mm, contents={%
   \abstractSponsorbox{#1}{#2}{#3}{#4}{\abstractsSection}%
 }
 
+\newcommand{\sponsorBoxLandscape}[4]{%
+  \setlength{\fboxwidth}{\linewidth}
+  \advance\fboxwidth by -10.0pt
+  \abstractSponsorbox{#1}{#2}{#3}{#4}{\abstractsSection}%
+}
+
 %% store \parindent in separate variable because it is resetted to 0 in parboxes
 \newlength{\saveparindent}
 \setlength{\saveparindent}{\parindent}
 
 %% box for advertisment by a sponsor
-%% 1. logo
-%% 2. width of the logo
+%% 1. logo (leave empty if none)
+%% 2. width of the logo (leave empty if none
 %% 3. number of required lines of the logo (due to usage of wrapfigure)
 %% 4. text
-%% 5. Umfeld (\workshopsSection oder \abstractsSection}
+%% 5. where we are in the booklet (\workshopsSection or \abstractsSection}
 \makeatletter
   \newcommand{\abstractSponsorbox}[5]{%
     \setlength{\fboxsep}{4.5pt}%
