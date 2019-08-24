@@ -386,6 +386,7 @@ height=169mm, contents={%
 % common implementation of typesetting of a session in the tables -- singleline mode
 \newcommand{\talkInternalSingleLine}[2]{%
   \textbf{#1}
+  \hspace{0.5em}
   \ifthenelse{\equal{#2}{}}{}{%
     \emph{#2}%
   }
