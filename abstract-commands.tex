@@ -383,6 +383,14 @@ height=169mm, contents={%
   }
 }
 
+% common implementation of typesetting of a session in the tables -- singleline mode
+\newcommand{\talkInternalSingleLine}[2]{%
+  \textbf{#1}
+  \ifthenelse{\equal{#2}{}}{}{%
+    \emph{#2}%
+  }
+}
+
 % macro to typeset a talk in the schedule tables spanning over more than one row:
 % usage: \longTalk{rowcount}{title}{speaker}
 \newcommand{\longTalk}[3]{%
@@ -401,6 +409,13 @@ height=169mm, contents={%
 \newcommand{\talk}[2]{%
   &
   \talkInternal{#1}{#2}%
+}%
+
+% macro to typeset a talk in the schedule tables, single line mode:
+% usage: \talkSingleLine{title}{speaker}
+\newcommand{\talkSingleLine}[2]{%
+  &
+  \talkInternalSingleLine{#1}{#2}%
 }%
 
 
