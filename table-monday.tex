@@ -175,22 +175,22 @@
 
 
   \setlength{\fboxsep}{4.5pt}%
-  \vspace{1\baselineskip}
+  \vspace{0.5\baselineskip}%
   \noindent%
   \fcolorbox{gray}{white}{%
-    \parbox{0.65\fboxwidth}{
-      \setlength{\parindent}{\saveparindent}%
-      \noindent Video recording and streaming is provided
-      by the volunteers of CCC Video Operation Centre.
-
-      The videos will be published at https://media.ccc.de/ under
-      a free and open license.
-    }%
-    \hfill
-    \parbox{0.3\fboxwidth}{%
-      \begin{center}
-        \includegraphics[width=18mm]{images-print/voc.pdf}%
-      \end{center}
+    \parbox{\fboxwidth}{%
+      \parbox{0.82\fboxwidth}{%
+        \noindent Video recording and streaming is provided
+        by the volunteers of CCC Video Operation Centre.
+        The videos will be published at https://media.ccc.de/ under
+        a free and open license.
+      }%
+      \hfill%
+      \parbox{0.15\fboxwidth}{%
+        \begin{center}
+          \includegraphics[width=12mm]{images-print/voc.pdf}%
+        \end{center}
+      }%
     }%
   }
   \setlength{\fboxsep}{3pt}
