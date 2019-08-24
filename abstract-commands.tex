@@ -434,17 +434,15 @@ height=169mm, contents={%
 
 % define colors
 \definecolor{commongray}{gray}{.9}
-\definecolor{tableRuleGray}{gray}{.4}
+\definecolor{tableRuleGray}{gray}{.9}
 \definecolor{textGray}{gray}{.45}
 
 % macro for table rules
 \newcommand{\programCRule}[1]{%
-  \arrayrulecolor{tableRuleGray}%
-  \cdashline{#1}[0.2mm/2mm]%
+  \cline{#1}%
 }
 \newcommand{\programHRule}[1]{%
-  \arrayrulecolor{tableRuleGray}%
-  \cdashline{2-#1}[0.2mm/2mm]%
+  \cline{2-#1}%
 }
 
 % macro for empty session slots
