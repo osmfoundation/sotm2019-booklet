@@ -11,8 +11,8 @@
   }%
 ]{mvleftadvertisement}
 \newpairofpagestyles[]{sponsor-mvleft}{}
-\AddLayersAtBeginOfPageStyle{sponsor-mvleft}{cropmarksplain}
 \AddLayersAtBeginOfPageStyle{sponsor-mvleft}{mvleftadvertisement}
+\AddLayersAtBeginOfPageStyle{sponsor-mvleft}{cropmarksplain}
 
 % Ministerium für Verkehr advertisement (right)
 %TODO get rid of their cropmarks, add ours
@@ -27,8 +27,8 @@
   }%
 ]{mvrightadvertisement}
 \newpairofpagestyles[]{sponsor-mvright}{}
-\AddLayersAtBeginOfPageStyle{sponsor-mvright}{cropmarksplain}
 \AddLayersAtBeginOfPageStyle{sponsor-mvright}{mvrightadvertisement}
+\AddLayersAtBeginOfPageStyle{sponsor-mvright}{cropmarksplain}
 
 % Geotab advertisement
 \DeclareNewLayer[background,%
@@ -58,15 +58,17 @@
 
 % Mapbox advertisement
 \DeclareNewLayer[background,%
-  width=125mm,%
-  height=168mm,%
+  width=115mm,%
+  height=158mm,%
+  hoffset=5mm,%
+  voffset=5mm,%
   contents={%
     \includegraphics{sponsors/mapbox.pdf}%
   }%
 ]{mapboxadvertisement}
 \newpairofpagestyles[]{sponsor-mapbox}{}
-\AddLayersAtBeginOfPageStyle{sponsor-mapbox}{cropmarksplain}
 \AddLayersAtBeginOfPageStyle{sponsor-mapbox}{mapboxadvertisement}
+\AddLayersAtBeginOfPageStyle{sponsor-mapbox}{cropmarksplain}
 
 % Anyways advertisement
 \DeclareNewLayer[background,%
@@ -114,9 +116,9 @@
   }%
 ]{mapillary}
 \newpairofpagestyles{sponsor-sncf-mapillary}{}
-\AddLayersAtBeginOfPageStyle{sponsor-sncf-mapillary}{cropmarksevery}
 \AddLayersAtBeginOfPageStyle{sponsor-sncf-mapillary}{sncf}
 \AddLayersAtBeginOfPageStyle{sponsor-sncf-mapillary}{mapillary}
+\AddLayersAtBeginOfPageStyle{sponsor-sncf-mapillary}{cropmarksevery}
 
 % IBM and OSADL advertisement
 \DeclareNewLayer[background,%

@@ -8,16 +8,31 @@
 % initialise \conferenceDay 
 \newcommand{\conferenceDay}{Noday}
 
+% define colours
+\definecolor{GHS}{cmyk}{0.16 0 .05 0}
+\definecolor{HSO}{cmyk}{0.02 0 0.12 0.11}
+\definecolor{academic}{cmyk}{0 0.02 0.23 0}
+\definecolor{HSW}{cmyk}{0.35 0 0.33 0.16}
+\definecolor{KHS}{cmyk}{0 .24 0.29 .04}
+\definecolor{Mathematikon C}{cmyk}{.16 0 0.35 0}
+\definecolor{ochsenblutrot}{cmyk}{0.30 1.0 0.90 0.65}
+
+\input{wallpaper/day-layers.tex}
+
 % define page style for cutting marks without anything else
 \DeclareNewLayer[background, oddorevenpage, width=125mm,%
 height=169mm, contents={%
-  \includegraphics{wallpaper/crop-marks.pdf}%
+  \begin{tikzpicture}[x=1mm, y=1mm]
+    \drawCropMarks
+  \end{tikzpicture}
 }]{cropmarksplain}
 
 % define default page style (cutting marks with page number)
 \DeclareNewLayer[background, oddorevenpage, width=125mm,%
 height=169mm, contents={%
-  \includegraphics{wallpaper/crop-marks.pdf}%
+  \begin{tikzpicture}[x=1mm, y=1mm]
+    \drawCropMarks
+  \end{tikzpicture}
 }]{cropmarksevery}
 \newpairofpagestyles[scrheadings]{cropmarksstyle}{}
 \AddLayersAtBeginOfPageStyle{cropmarksstyle}{cropmarksevery}
@@ -36,18 +51,6 @@ height=169mm, contents={%
 \def\monday{Monday}
 
 % define Saturday page style
-\DeclareNewLayer[background, oddpage,  width=125mm,%
-height=169mm, contents={%
-  \includegraphics{wallpaper/saturday-odd.pdf}%
-}]{saturdayodd}
-\DeclareNewLayer[background, evenpage,  width=125mm,%
-height=169mm, contents={%
-  \includegraphics{wallpaper/saturday-even.pdf}%
-}]{saturdayeven}
-\DeclareNewLayer[background, oddpage,  width=125mm,%
-height=169mm, contents={%
-  \includegraphics{wallpaper/saturday-odd-rotated.pdf}%
-}]{saturdayoddrotated}
 \newpairofpagestyles[scrheadings]{saturday-table}{}
 \AddLayersAtBeginOfPageStyle{saturday-table}{saturdayeven}
 \AddLayersAtBeginOfPageStyle{saturday-table}{saturdayoddrotated}
@@ -56,18 +59,6 @@ height=169mm, contents={%
 \AddLayersAtBeginOfPageStyle{saturday}{saturdayodd}
 
 % define Sunday page style
-\DeclareNewLayer[background, oddpage,  width=125mm,%
-height=169mm, contents={%
-  \includegraphics{wallpaper/sunday-odd.pdf}%
-}]{sundayodd}
-\DeclareNewLayer[background, evenpage,  width=125mm,%
-height=169mm, contents={%
-  \includegraphics{wallpaper/sunday-even.pdf}%
-}]{sundayeven}
-\DeclareNewLayer[background, oddpage,  width=125mm,%
-height=169mm, contents={%
-  \includegraphics{wallpaper/sunday-odd-rotated.pdf}%
-}]{sundayoddrotated}
 \newpairofpagestyles[scrheadings]{sunday-table}{}
 \AddLayersAtBeginOfPageStyle{sunday-table}{sundayeven}
 \AddLayersAtBeginOfPageStyle{sunday-table}{sundayoddrotated}
@@ -76,18 +67,6 @@ height=169mm, contents={%
 \AddLayersAtBeginOfPageStyle{sunday}{sundayodd}
 
 % define Monday page style
-\DeclareNewLayer[background, oddpage,  width=125mm,%
-height=169mm, contents={%
-  \includegraphics{wallpaper/monday-odd.pdf}%
-}]{mondayodd}
-\DeclareNewLayer[background, evenpage,  width=125mm,%
-height=169mm, contents={%
-  \includegraphics{wallpaper/monday-even.pdf}%
-}]{mondayeven}
-\DeclareNewLayer[background, oddpage,  width=125mm,%
-height=169mm, contents={%
-  \includegraphics{wallpaper/monday-odd-rotated.pdf}%
-}]{mondayoddrotated}
 \newpairofpagestyles[scrheadings]{monday-table}{}
 \AddLayersAtBeginOfPageStyle{monday-table}{mondayeven}
 \AddLayersAtBeginOfPageStyle{monday-table}{mondayoddrotated}
@@ -231,15 +210,6 @@ height=169mm, contents={%
   }%
 }
 \makeatother
-
-% define colours
-\definecolor{GHS}{cmyk}{0.16 0 .05 0}
-\definecolor{HSO}{cmyk}{0.02 0 0.12 0.11}
-\definecolor{academic}{cmyk}{0 0.02 0.23 0}
-\definecolor{HSW}{cmyk}{0.35 0 0.33 0.16}
-\definecolor{KHS}{cmyk}{0 .24 0.29 .04}
-\definecolor{Mathematikon C}{cmyk}{.16 0 0.35 0}
-\definecolor{ochsenblutrot}{cmyk}{0.30 1.0 0.90 0.65}
 
 % session at GHS
 \newcommand{\abstractGHS}[4]%
