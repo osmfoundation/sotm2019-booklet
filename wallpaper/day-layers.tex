@@ -1,0 +1,93 @@
+\newcommand{\whitePageFill}{%
+  \fill [white] (0,0) rectangle (125,168);
+}
+
+\newcommand{\drawCropMarks}{%
+  \draw (10,0) -- +(0,5);
+  \draw (0,10) -- +(5,0);
+  \draw (115,0) -- +(0,5);
+  \draw (125,10) -- +(-5,0);
+  \draw (10,168) -- +(0,-5);
+  \draw (0,158) -- +(5,0);
+  \draw (115,168) -- +(0,-5);
+  \draw (125,158) -- +(-5,0);
+}
+
+% macro to expand to TikZ code to render the day label
+% 1. day
+% 2. y offset of coloured box from bottom
+% 3. y offset of text label from bottom
+\newcommand{\dayLabelRight}[3]{%
+  \begin{tikzpicture}[x=1mm, y=1mm]
+    \whitePageFill
+    \drawCropMarks
+    \coordinate (colorBoxSW) at (109,#2);
+    \fill [ochsenblutrot] (colorBoxSW) rectangle +(11,35);
+    \coordinate (textTopLineCenter) at ($ (colorBoxSW) + (4.009,17.5) $);
+    \draw (textTopLineCenter) node [anchor=north, text=white, rotate=-90, inner sep=0] {\small\sffamily\bfseries #1};
+  \end{tikzpicture}
+}
+
+% macro to expand to TikZ code to render the day label on a left page
+% 1. day
+% 2. y offset of coloured box from bottom
+% 3. y offset of text label from bottom
+\newcommand{\dayLabelLeft}[3]{%
+  \begin{tikzpicture}[x=1mm, y=1mm]
+    \whitePageFill
+    \drawCropMarks
+    \coordinate (colorBoxSW) at (5,#2);
+    \fill [ochsenblutrot] (colorBoxSW) rectangle +(11,35);
+    \coordinate (textTopLineCenter) at ($ (colorBoxSW) + (6.990,17.5) $);
+    \draw (textTopLineCenter) node [anchor=north, text=white, rotate=90, inner sep=0] {\small\sffamily\bfseries #1};
+  \end{tikzpicture}%
+}
+
+% macro to expand to TikZ code to render the day label on a right page rotated
+% 1. day
+% 2. y offset of coloured box from bottom
+% 3. y offset of text label from bottom
+\newcommand{\dayLabelRightRotated}[3]{%
+  \begin{tikzpicture}[x=1mm, y=1mm]
+    \whitePageFill
+    \drawCropMarks
+    \coordinate (colorBoxSW) at (109,#2);
+    \fill [ochsenblutrot] (colorBoxSW) rectangle +(11,35);
+    \coordinate (textTopLineCenter) at ($ (colorBoxSW) + (1.346,17.5) $);
+    \draw (textTopLineCenter) node [anchor=north, text=white, rotate=90, inner sep=0] {\small\sffamily\bfseries #1};
+  \end{tikzpicture}%
+}
+
+% macro to create new layer for a day
+% This calls \dayLabelLeft and its siblings
+% 1. layer name
+% 2. options for DeclareNewLayer
+% 3. command to call
+% 4. day
+% 5. y offset of coloured box from bottom
+% 6. y offset of text label from bottom
+\newcommand{\dayLayerSinglePage}[6]{%
+  \DeclareNewLayer[%
+    background,%
+    #2,
+    width=125mm,%
+    height=168mm,%
+    hoffset=0mm,%
+    voffset=0mm,%
+    contents={%
+      #3{#4}{#5}{#6}%
+    }%
+  ]{#1}%
+}
+
+\dayLayerSinglePage{saturdayoddrotated}{oddpage}{\dayLabelRightRotated}{Saturday}{100}{110.549}
+\dayLayerSinglePage{saturdayodd}{oddpage}{\dayLabelRight}{Saturday}{100}{110.549}
+\dayLayerSinglePage{saturdayeven}{evenpage}{\dayLabelLeft}{Saturday}{100}{110.549}
+
+\dayLayerSinglePage{sundayoddrotated}{oddpage}{\dayLabelRightRotated}{Sunday}{60}{73.115}
+\dayLayerSinglePage{sundayodd}{oddpage}{\dayLabelRight}{Sunday}{60}{73.115}
+\dayLayerSinglePage{sundayeven}{evenpage}{\dayLabelLeft}{Sunday}{60}{73.115}
+
+\dayLayerSinglePage{mondayoddrotated}{oddpage}{\dayLabelRightRotated}{Monday}{20}{32.233}
+\dayLayerSinglePage{mondayodd}{oddpage}{\dayLabelRight}{Monday}{20}{32.233}
+\dayLayerSinglePage{mondayeven}{evenpage}{\dayLabelLeft}{Monday}{20}{32.233}
