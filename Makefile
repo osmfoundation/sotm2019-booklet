@@ -11,6 +11,10 @@ master.pdf: *.tex wallpaper/*.pdf images-print/*.pdf wallpaper/*.pdf icons/*.pdf
 cropped.pdf: master.pdf
 	gs -o cropped.pdf -sDEVICE=pdfwrite -c "[/CropBox [28.3464 28.3464 325.9836 447.87312]" -c " /PAGES pdfmark" -dPDFSETTINGS=/prepress -f master.pdf
 
-publish: master.pdf cropped.pdf
-	scp -C master.pdf 1blu-rootserver:/var/www/html/sotm/booklet19/
+publish_cropped: cropped.pdf
 	scp -C cropped.pdf 1blu-rootserver:/var/www/html/sotm/booklet19/
+
+publish_master: master.pdf
+	scp -C master.pdf 1blu-rootserver:/var/www/html/sotm/booklet19/
+
+publish: publish_master publish_cropped
