@@ -9,13 +9,23 @@
 \newcommand{\conferenceDay}{Noday}
 
 % define colours
-\definecolor{GHS}{cmyk}{0.16 0 .05 0}
-\definecolor{HSO}{cmyk}{0.02 0 0.12 0.11}
-\definecolor{academic}{cmyk}{0 0.02 0.23 0}
-\definecolor{HSW}{cmyk}{0.35 0 0.33 0.16}
-\definecolor{KHS}{cmyk}{0 .24 0.29 .04}
-\definecolor{Mathematikon C}{cmyk}{.16 0 0.35 0}
+\definecolor{beige-uni}{cmyk}{0.05 0.05 0.09 0.00}
+%\definecolor{beige-uni}{cmyk}{0.00 0.17 0.15 0.34}
+\definecolor{beige}{cmyk}{0 0.02 0.06 0.07}
+\colorlet{GHS}{beige-uni}
+\colorlet{HSO}{beige-uni}
+\colorlet{HSW}{beige-uni}
+\colorlet{academic}{beige-uni}
+\colorlet{KHS}{beige-uni}
+\colorlet{Mathematikon C}{beige-uni}
+%\definecolor{GHS}{cmyk}{0.16 0 .05 0}
+%\definecolor{HSO}{cmyk}{0.02 0 0.12 0.11}
+%\definecolor{academic}{cmyk}{0 0.02 0.23 0}
+%\definecolor{HSW}{cmyk}{0.35 0 0.33 0.16}
+%\definecolor{KHS}{cmyk}{0 .24 0.29 .04}
+%\definecolor{Mathematikon C}{cmyk}{.16 0 0.35 0}
 \definecolor{ochsenblutrot}{cmyk}{0.30 1.0 0.90 0.65}
+\colorlet{table-header}{beige-uni}
 
 \input{wallpaper/day-layers.tex}
 
@@ -214,43 +224,43 @@ height=169mm, contents={%
 % session at GHS
 \newcommand{\abstractGHS}[4]%
 {%
-  \setAbstract{#1}{#2}{#3}{#4}{commongray}{Großer Hörsaal}
+  \setAbstract{#1}{#2}{#3}{#4}{beige-uni}{Großer Hörsaal}
 }
 
 % abstract at HSO 
 \newcommand{\abstractHSO}[4]%
 {%
-  \setAbstract{#1}{#2}{#3}{#4}{commongray}{Hörsaal Ost}
+  \setAbstract{#1}{#2}{#3}{#4}{beige-uni}{Hörsaal Ost}
 }
 
 % abstract for academic talks
 \newcommand{\abstractAcademic}[4]%
 {%
-  \setAbstract{#1}{#2}{#3}{#4}{commongray}{Hörsaal West}
+  \setAbstract{#1}{#2}{#3}{#4}{beige-uni}{Hörsaal West}
 }
 
 % abstract at HSW
 \newcommand{\abstractHSW}[4]%
 {%
-  \setAbstract{#1}{#2}{#3}{#4}{commongray}{Hörsaal West}
+  \setAbstract{#1}{#2}{#3}{#4}{beige-uni}{Hörsaal West}
 }
 
 % abstract at KHS
 \newcommand{\abstractKHS}[4]%
 {%
-  \setAbstract{#1}{#2}{#3}{#4}{commongray}{Kleiner Hörsaal}
+  \setAbstract{#1}{#2}{#3}{#4}{beige-uni}{Kleiner Hörsaal}
 }
 
 % abstract at Mathematikon C
 \newcommand{\abstractMathematikonC}[4]%
 {%
-  \setAbstract{#1}{#2}{#3}{#4}{commongray}{Mathematikon C}
+  \setAbstract{#1}{#2}{#3}{#4}{beige-uni}{Mathematikon C}
 }
 
 % abstract at a different location
 \newcommand{\abstractOther}[5]%
 {%
-  \setAbstract{#1}{#2}{#3}{#4}{commongray}{#5}
+  \setAbstract{#1}{#2}{#3}{#4}{beige-uni}{#5}
 }
 
 % infobox for workshops (they don't have an abstract in the booklet)
@@ -396,6 +406,18 @@ height=169mm, contents={%
   &
   \multicolumn{#1}{#2}{\talkInternal{#3}{#4}}%
 }%
+
+% set time in scheduel table
+\newcommand{\tableRowFirstCell}[1]{%
+  \cellcolor{table-header}
+  \textcolor{black}{#1}%
+}
+
+% set time in scheduel table
+\newcommand{\tableColHead}[1]{%
+  \cellcolor{table-header}%
+  \textcolor{black}{#1}%
+}
 
 \newcommand{\workshop}[3]%
 {%
