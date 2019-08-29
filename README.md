@@ -2,7 +2,7 @@
 
 ## About this repository
 
-This repository is for the source code of the booklet of [State of the Map 2019 conference](https://2019.stateofthemap.org/) in Heidelberg from 21 to 23 September 2019. A nightly build can be found [here](https://michreichert.de/sotm/booklet19/master.pdf).
+This repository is for the source code of the booklet of [State of the Map 2019 conference](https://2019.stateofthemap.org/) in Heidelberg from 21 to 23 September 2019.
 
 ## Building
 
@@ -19,10 +19,15 @@ Please note that this booklet is built using LuaLaTeX, not PDFLaTeX. Building
 requires at least TeXlive 2016 due to the usage of the quite new
 *scrlayer-scrpage2* package
 
+## Builds
+
+* [master branch](https://michreichert.de/sotm/booklet19/master.pdf)
+* [final PDF](https://michreichert.de/sotm/booklet19/final.pdf)
+
 
 ## Contributing
 
-Contributions are welcome, see [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+The booklet has been sent to the print shop. Therefore, changes to the content, layout etc. do not have any benefit any more.
 
 ## License
 
