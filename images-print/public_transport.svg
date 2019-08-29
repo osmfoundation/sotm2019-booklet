@@ -541,10 +541,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="25.659905"
-     inkscape:cy="226.40104"
+     inkscape:cx="171.00797"
+     inkscape:cy="428.36062"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer3"
+     inkscape:current-layer="layer10"
      showgrid="false"
      inkscape:window-width="1366"
      inkscape:window-height="708"
@@ -563,7 +563,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -825,7 +825,7 @@
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccsssscsscc" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#00b934;stroke-width:0.76499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker9944)"
+       style="fill:none;fill-rule:evenodd;stroke:#00b934;stroke-width:0.765;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker9944);marker-end:url(#marker8434)"
        d="m 70.350349,88.530989 c 1.275444,0.334305 2.460162,0.694624 3.419282,1.083555 2.73583,1.109403 8.926906,4.316675 10.36794,5.167122 1.441035,0.850446 7.103071,2.872471 8.761541,3.432124 1.65847,0.559653 5.784876,1.373724 7.455488,1.89681 2.43838,0.23413 5.84607,0.86889 7.38287,1.3032 1.5368,0.43432 4.25961,1.5034 6.19731,0.98556 1.93771,-0.51783 9.63185,-2.91291 10.88389,-3.267263 1.25205,-0.354353 2.06892,-1.980686 5.21582,-2.797542 0.80181,-0.23386 14.29893,-3.33968 14.80006,-3.473315 0.50113,-0.133635 1.36094,-0.761029 1.20271,-1.720548 -0.15822,-0.95952 -0.38424,-1.829163 -0.51127,-2.949258 -0.12703,-1.120094 0.57356,-1.82297 1.18442,-2.904453 0.61082,-1.081483 0.52039,-1.307102 0.63992,-2.263312 0.0687,-0.549928 0.027,-1.814666 -0.60152,-2.561397 -0.50618,-0.601303 -0.63288,-1.585308 -0.60328,-1.940909 0.0708,-0.850659 0.20569,-1.316 0.11119,-1.646729 -0.0945,-0.330729 -1.27853,-6.294334 -1.27853,-6.294334 0,0 -0.54737,-11.953495 -0.56697,-12.709448 -0.0196,-0.755953 0.0282,-1.300973 -0.3498,-1.915185 -0.37797,-0.614209 -0.88909,-1.36443 -1.45606,-2.167628 -0.56696,-0.803201 -0.93446,-1.092908 -1.02896,-1.518131 -0.0945,-0.425222 -0.53069,-1.611147 -0.67243,-2.319852 -0.14174,-0.708705 -0.45003,-2.065029 -0.87525,-3.00997 -0.42523,-0.944941 -1.18118,-2.581883 -1.65365,-3.668564 -0.47247,-1.086683 -3.28653,-11.403238 -3.54639,-12.442672 -0.25986,-1.039434 -0.41663,-1.543431 -0.95997,-1.968654 -0.54334,-0.425224 -8.87266,-5.941853 -9.93133,-6.691747 -0.40091,-0.283973 -0.86358,-1.537598 -1.30294,-2.839738 -0.42104,-1.247831 0.24306,-1.894121 0.61806,-2.739513 0.37498,-0.845392 0.76856,-1.454958 0.41588,-2.260532 -0.51971,-1.039435 -1.53482,-3.439535 -1.67657,-3.959253 -0.14174,-0.5197168 -0.33072,-1.5119043 -0.33072,-2.0788686 0,-0.5669643 -0.21261,-3.0710566 -0.30711,-5.0081846"
        id="path7422"
        inkscape:connector-curvature="0"
@@ -2369,14 +2369,14 @@
     <text
        id="text8896-0"
        y="37.471279"
-       x="88.754616"
-       style="font-style:normal;font-weight:normal;font-size:2.82222223px;line-height:2.9104166px;font-family:sans-serif;text-align:end;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="69.787277"
+       style="font-style:normal;font-weight:normal;font-size:2.82222223px;line-height:2.9104166px;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          id="tspan8894-2"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:2.9104166px;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro';text-align:end;text-anchor:end;stroke-width:0.26458332px"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:2.9104166px;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro';text-align:start;text-anchor:start;stroke-width:0.26458332px"
          y="37.471279"
-         x="88.754616"
-         sodipodi:role="line">HD = Heidelberg</tspan></text>
+         x="69.787277"
+         sodipodi:role="line">* circle line (Rundlinie)</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:2.82222223px;line-height:2.9104166px;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -2471,11 +2471,11 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:2.82222223px;line-height:2.9104166px;font-family:sans-serif;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="69.444"
+       x="69.869225"
        y="40.411243"
        id="text1995"><tspan
          sodipodi:role="line"
-         x="69.444"
+         x="69.869225"
          y="40.411243"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:2.9104166px;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro';text-align:start;text-anchor:start;stroke-width:0.26458332px"
          id="tspan1993">Hbf. = Hauptbahnhof</tspan></text>
@@ -2810,7 +2810,7 @@
          x="128.09331"
          y="4.8792162"
          style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro Italic';stroke-width:0.26458332px"
-         id="tspan1460">Schriesheim, Weinheim</tspan></text>
+         id="tspan1460">Schriesheim, Weinheim*</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:2.82222223px;line-height:6.61458349px;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -3598,12 +3598,7 @@
          x="68.743103"
          y="96.691376"
          style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:2.9104166px;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro Italic';text-align:start;text-anchor:start;stroke-width:0.26458332px"
-         id="tspan10376">Mannheim,</tspan><tspan
-         sodipodi:role="line"
-         x="68.743103"
-         y="99.629356"
-         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:2.9104166px;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro Italic';text-align:start;text-anchor:start;stroke-width:0.26458332px"
-         id="tspan2647">Weinheim</tspan></text>
+         id="tspan2647">Mannheim*</tspan></text>
     <rect
        y="91.105049"
        x="68.746803"
